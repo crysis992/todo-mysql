@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Mali as GF } from 'next/font/google'
 import Link from 'next/link'
+import { Toaster } from '@/components/ui/Toaster'
 
 const globalFont = GF({ subsets: ['latin'], weight: ['400'], display: "swap", adjustFontFallback: false })
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
           {children}
         </div>
         <footer>Footer</footer>
+        <Toaster />
       </body>
     </html >
   )
