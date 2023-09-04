@@ -2,6 +2,7 @@ import prisma from "@/lib/db"
 import AddCategoryForm from "./AddCategoryForm";
 import RemoveCategoryButton from "./RemoveCategoryButton";
 import { removeCategory } from "@/actions/CategoryActions";
+import { getCurrentUser } from "@/lib/auth";
 
 async function getCategories() {
     const categories = await prisma.category.findMany();
@@ -10,6 +11,15 @@ async function getCategories() {
 
 async function Categories() {
     const categories = await getCategories();
+    const session = await getCurrentUser();
+
+    if (!session) {
+        return (
+            <>
+                <p>Du musst eingeloggt sein!</p>
+            </>
+        )
+    }
 
     return (
         <>

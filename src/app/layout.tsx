@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { Mali as GF } from 'next/font/google'
 import Link from 'next/link'
 import { Toaster } from '@/components/ui/Toaster'
+import { Provider } from '@radix-ui/react-toast'
+import Providers from '@/components/Providers'
 
 const globalFont = GF({ subsets: ['latin'], weight: ['400'], display: "swap", adjustFontFallback: false })
 
@@ -16,16 +18,17 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
   return (
     <html lang="en">
       <body className={cn(globalFont.className, "min-h-screen flex flex-col")}>
+        <Providers session={null}>
+          <nav className='w-full bg-amber-500'>
+            <Link className='text-2xl font-bold leading-loose ml-2 hover:text-white transition-colors duration-75 ease-in' href={'/'} >Simple Todo</Link>
+          </nav>
 
-        <nav className='w-full bg-amber-500'>
-          <Link className='text-2xl font-bold leading-loose ml-2 hover:text-white transition-colors duration-75 ease-in' href={'/'} >Simple Todo</Link>
-        </nav>
-
-        <div className='grow mt-5'>
-          {children}
-        </div>
-        <footer>Footer</footer>
-        <Toaster />
+          <div className='grow flex flex-col'>
+            {children}
+          </div>
+          <footer>Footer</footer>
+          <Toaster />
+        </Providers>
       </body>
     </html >
   )
