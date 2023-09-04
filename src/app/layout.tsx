@@ -26,7 +26,11 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
           <div className='grow flex flex-col'>
             {children}
           </div>
-          <footer>Footer</footer>
+          <footer>
+            <div className='flex justify-center'>
+              <a href="https://github.com/crysis992/todo-mysql" className='font-bold' target='_blank'>Sourcecode</a>
+            </div>
+          </footer>
           <Toaster />
         </Providers>
       </body>
