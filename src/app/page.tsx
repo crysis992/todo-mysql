@@ -1,4 +1,6 @@
 import Categories from '@/components/category/Categories'
+import TodoEntry from '@/components/todo/TodoEntry'
+import AddTodoList from '@/components/todo/AddTodoList'
 import { Separator } from '@/components/ui/Separator'
 import UserPanel from '@/components/user/UserPanel'
 import React from 'react'
@@ -25,23 +27,14 @@ export default function Home() {
         <section className='w-full col-span-2 p-2 shadow-sm shadow-amber-800'>
           <h1>Todo</h1>
           <Separator className='my-1' />
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet?</div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet?</div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet?</div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet?</div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet?</div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet?</div>
+
+          <TodoEntry />
         </section>
 
         <section className='w-full col-span-1 p-2 shadow-sm shadow-amber-800'>
-          <h1>Todo</h1>
+          <h1>Liste Hinzufügen</h1>
           <Separator className='my-1' />
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet?</div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet?</div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet?</div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet?</div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet?</div>
-          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, amet?</div>
+          <AddTodoList />
         </section>
 
       </div>
