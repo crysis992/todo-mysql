@@ -9,6 +9,8 @@ export type CategoryResult = {
 
 export async function removeCategory(id: number) {
 
+    console.log("removing category", id)
+
     try {
         const category = await prisma.category.delete({
             where: {
@@ -20,6 +22,7 @@ export async function removeCategory(id: number) {
             data: category
         }
     } catch (error) {
+        console.log(error)
         return {
             status: "error",
             data: error
