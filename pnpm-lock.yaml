@@ -83,6 +83,9 @@ dependencies:
   react-hook-form:
     specifier: ^7.46.0
     version: 7.46.0(react@18.2.0)
+  sql-template-tag:
+    specifier: ^5.1.0
+    version: 5.1.0
   tailwind-merge:
     specifier: ^1.14.0
     version: 1.14.0
@@ -3360,6 +3363,11 @@ packages:
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
+    dev: false
+
+  /sql-template-tag@5.1.0:
+    resolution: {integrity: sha512-+0uwu2fn1LJ3KzZYUrTSViBuHEkyjpAGMnJ3X7RYRFDNIMft99lLAe6kkybPPkV+8GgDrifxUmj+C4j1hpYAgQ==}
+    engines: {node: '>=14'}
     dev: false
 
   /streamsearch@1.1.0:
