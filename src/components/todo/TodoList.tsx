@@ -1,7 +1,7 @@
 import { Category, TodoEntry, Todolist } from "@prisma/client"
 import AddTodoEntryForm from "./AddTodoEntryForm"
-import { Badge } from "../ui/Badge"
-import { Label } from "../ui/Label"
+import TodoListSingleEntry from "./TodoListSingleEntry"
+import DeleteListButton from "./DeleteListButton"
 
 interface ExtendedTodoEntry extends TodoEntry {
     category: {
@@ -19,10 +19,13 @@ function TodoList({ list, categories }: TodoListProps) {
 
     return (
         <>
-            <h2 className="flex items-center gap-2 cursor-default font-bold">{list.title} ({list.TodoEntry.length}) <AddTodoEntryForm categories={categories} listId={list.id} /></h2>
+            <h2 className="flex items-center gap-2 cursor-default font-bold">
+                {list.title} ({list.TodoEntry.length}) <AddTodoEntryForm categories={categories} listId={list.id} />
+                <DeleteListButton listId={list.id} listName={list.title} />
+            </h2>
             <ul className="list-disc ml-5 marker:text-amber-950">
                 {list.TodoEntry.map((todoEntry) => (
-                    <li key={todoEntry.id} className="cursor-default"><Label>{todoEntry.title}</Label> <Badge className="text-xs py-0.5 px-1 cursor-default" >{todoEntry.category.title}</Badge></li>
+                    <TodoListSingleEntry key={todoEntry.id} id={todoEntry.id} categoryTitle={todoEntry.category.title} todoTitle={todoEntry.title} listName={list.title} />
                 ))}
             </ul>
         </>

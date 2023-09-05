@@ -11,12 +11,15 @@ export const authOptions: NextAuthOptions = {
                 email: {
                     label: "Email",
                     type: "text",
-                    placeholder: "user@ncon.de"
+                    placeholder: "demo@ncon.de",
+                    value: "demo@ncon.de"
                 },
                 password: {
                     label: "Password",
                     type: "password",
-                    placeholder: "Password"
+                    placeholder: "demo",
+                    value: "demo"
+
                 }
             },
             async authorize(credentials) {

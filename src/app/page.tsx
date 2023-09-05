@@ -1,5 +1,5 @@
 import Categories from '@/components/category/Categories'
-import TodoEntry from '@/components/todo/TodoEntry'
+import TodoCard from '@/components/todo/TodoCard'
 import AddTodoList from '@/components/todo/AddTodoList'
 import { Separator } from '@/components/ui/Separator'
 import UserPanel from '@/components/user/UserPanel'
@@ -28,7 +28,7 @@ export default function Home() {
           <h1>Todo</h1>
           <Separator className='my-1' />
 
-          <TodoEntry />
+          <TodoCard />
         </section>
 
         <section className='w-full col-span-1 p-2 shadow-sm shadow-amber-800'>

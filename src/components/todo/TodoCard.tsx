@@ -3,7 +3,7 @@ import prisma from "@/lib/db"
 import TodoList from "./TodoList";
 import sql, { empty, join, raw } from "sql-template-tag";
 
-async function TodoEntry() {
+async function TodoCard() {
     const session = await getCurrentUser();
 
     if (!session) {
@@ -55,4 +55,4 @@ async function TodoEntry() {
     )
 }
 
-export default TodoEntry
+export default TodoCard

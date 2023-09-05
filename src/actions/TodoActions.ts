@@ -20,11 +20,39 @@ export async function addTodoList(description: string, userId: number) {
             status: "success",
             data: category
         }
-    } catch (error) {
+    } catch (error: any) {
         return {
             status: "error",
-            data: error
+            data: error.message
         }
+    }
+}
+
+export async function deleteListEntry(entryId: number) {
+    try {
+        await prisma.todoEntry.delete({
+            where: {
+                id: entryId,
+            }
+        })
+        return true;
+    } catch (error: any) {
+        console.log(error);
+        return false;
+    }
+}
+
+export async function deleteTodoList(listId: number) {
+    try {
+        await prisma.todolist.delete({
+            where: {
+                id: listId,
+            }
+        })
+        return true;
+    } catch (error: any) {
+        console.log(error);
+        return false;
     }
 }
 
@@ -53,10 +81,10 @@ export async function addListEntry(list: number, description: string, title: str
             status: "success",
             data: entry
         }
-    } catch (error) {
+    } catch (error: any) {
         return {
             status: "error",
-            data: error
+            data: error.message
         }
     }
 }
