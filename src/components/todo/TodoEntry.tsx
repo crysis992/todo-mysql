@@ -32,11 +32,6 @@ async function TodoEntry() {
                     }
                 },
                 user: true,
-                _count: {
-                    select: {
-                        TodoEntry: true
-                    }
-                }
             }
         }),
         prisma.category.findMany()
@@ -45,7 +40,7 @@ async function TodoEntry() {
     return (
         <>
             {lists.map((todoList) => (
-                <TodoList key={todoList.id} userid={session.id} categories={categories} list={todoList} />
+                <TodoList key={todoList.id} categories={categories} list={todoList} />
             ))}
         </>
     )
